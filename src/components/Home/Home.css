@@ -616,42 +616,45 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile header: arrange into two rows (top controls + full-width search) */
   .home-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 8px 12px;
+    align-items: center;
     padding: 12px 4vw;
-    flex-wrap: wrap;
   }
-  
-  .header-left-home {
-    gap: 8px;
+
+  .home-header > .header-logo {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
   }
-  
+
+  .home-header > .header-location {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .home-header > .header-lang {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .home-header > .header-search {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    margin-top: 6px;
+  }
+
   .logo-image {
-    height: 35px;
-  }
-  
-  .location-display {
-    font-size: 12px;
-    max-width: 100px;
-  }
-  
-  .header-center-home {
-    order: 3;
-    width: 100%;
-    margin-top: 12px;
-  }
-  
-  .search-bar-home {
-    width: 100%;
-  }
-  
-  .header-right-home {
-    gap: 12px;
-  }
-  
-  .lang-btn-home,
-  .profile-btn-home {
-    font-size: 12px;
-    padding: 6px 12px;
+    height: 36px;
   }
   
   .hero-section {
