@@ -514,6 +514,33 @@
     padding: 6px 10px;
   }
   
+/* Improve nav appearance on small screens */
+@media (max-width: 768px) {
+  .header-nav-detail {
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-item-detail {
+    background: rgba(0,0,0,0.03);
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: none;
+  }
+
+  .nav-item-detail svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-item-detail:hover {
+    color: #EF4444;
+    background: rgba(239,68,68,0.04);
+  }
+}
   .breadcrumb-wrapper {
     padding: 10px 4vw;
   }

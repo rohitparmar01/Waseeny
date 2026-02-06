@@ -311,3 +311,31 @@
     font-size: 12px;
   }
 }
+
+/* Improve nav appearance on small screens */
+@media (max-width: 768px) {
+  .header-nav-pizza {
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-item-pizza {
+    background: rgba(0,0,0,0.03);
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.04);
+    box-shadow: none;
+  }
+
+  .nav-item-pizza svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .nav-item-pizza:hover {
+    color: #EF4444;
+    background: rgba(239,68,68,0.04);
+  }
+}
