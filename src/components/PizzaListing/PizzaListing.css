@@ -1,0 +1,313 @@
+.pizza-listing-container {
+  min-height: 100vh;
+  background: #fff;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pizza-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 5vw;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+  max-width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-other {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.other-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: underline;
+}
+
+.header-nav-pizza {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-item-pizza {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-item-pizza:hover {
+  color: #EF4444;
+}
+
+.pizza-main {
+  padding: 40px 5vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pizza-title-section {
+  margin-bottom: 24px;
+}
+
+.pizza-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+  margin-top: 0;
+  letter-spacing: -0.3px;
+}
+
+.pizza-subtitle {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+  margin: 0;
+}
+
+.pizza-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #999;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-count {
+  margin-bottom: 28px;
+}
+
+.pizza-count h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+
+.pizza-restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.pizza-restaurant-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pizza-restaurant-card:hover {
+  transform: scale(0.98);
+}
+
+.pizza-restaurant-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #f5f5f5;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Real pizza and restaurant images */
+.pizza-restaurant-card:nth-child(1) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(2) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(3) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(4) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(5) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(6) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(7) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(8) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1579751626657-72bc17010498?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(9) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(10) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1592415499556-74fcb9a45b2c?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(11) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(12) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(13) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1584365845116-4e1c2e98d0b6?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(14) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1573821663912-6df460f9c684?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(15) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=250&fit=crop'); }
+.pizza-restaurant-card:nth-child(16) .pizza-restaurant-image { background-image: url('https://images.unsplash.com/photo-1600628421055-4d30de868b8f?w=400&h=250&fit=crop'); }
+
+.pizza-restaurant-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.pizza-restaurant-info {
+  padding: 0 2px;
+}
+
+.pizza-restaurant-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.pizza-restaurant-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.pizza-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+}
+
+.pizza-separator {
+  color: #999;
+  font-size: 12px;
+}
+
+.pizza-time {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+}
+
+.pizza-restaurant-category {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 3px;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.pizza-restaurant-location {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+  .pizza-restaurants-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .pizza-header {
+    padding: 14px 4vw;
+  }
+  
+  .pizza-main {
+    padding: 30px 4vw;
+  }
+  
+  .pizza-restaurants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pizza-header {
+    padding: 12px 4vw;
+    flex-wrap: wrap;
+  }
+  
+  .pizza-header-left {
+    gap: 8px;
+  }
+  
+  .logo-image {
+    height: 35px;
+  }
+  
+  .dropdown-btn,
+  .nav-item-pizza {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .pizza-main {
+    padding: 24px 4vw;
+  }
+  
+  .filters-row {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+  
+  .filter-tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .pizza-restaurants-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .pizza-restaurant-name {
+    font-size: 16px;
+  }
+  
+  .pizza-restaurant-rating,
+  .pizza-restaurant-category,
+  .pizza-restaurant-location {
+    font-size: 12px;
+  }
+}
