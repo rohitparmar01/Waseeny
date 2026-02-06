@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import logo from '../../assets/waseeny-logo.png';
-import loginBg from '../../assets/login-background.jpg';
+// import loginBg from '../../assets/login-background.jpg';
 
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState('');
