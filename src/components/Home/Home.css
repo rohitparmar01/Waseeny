@@ -29,9 +29,11 @@
 }
 
 .home-header .header-logo .logo-image {
-  height: 80px !important;
-  width: auto !important;
-  object-fit: contain !important;
+  /* Responsive logo height: grows/shrinks with viewport but capped */
+  height: clamp(48px, 6vw, 80px);
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header-location {
@@ -799,7 +801,8 @@
   }
 
   .home-header .header-logo .logo-image {
-    height: 55px !important;
+    height: clamp(40px, 8vw, 55px);
+    max-height: 55px;
   }
   
   .hero-section {

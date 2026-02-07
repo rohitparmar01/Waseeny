@@ -572,22 +572,39 @@
     padding: 16px;
   }
   
-  .menu-item {
+  /* Mobile: stack menu item content and make images responsive */
+  .menu-item-card {
+    /* Show image above content on small screens */
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
-  
+
   .menu-item-image-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    order: -1; /* ensure image container appears first */
+    align-items: center;
   }
-  
+
+  .menu-item-info {
+    order: 1;
+  }
+
   .menu-item-image {
     width: 100%;
-    height: 180px;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 16/10;
+    background-size: cover;
+    border-radius: 12px;
   }
-  
+
   .menu-item-info {
     width: 100%;
+    max-width: 100%;
   }
   
   .cart-footer {
