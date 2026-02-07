@@ -24,8 +24,9 @@
 }
 
 .logo-image-small {
-  height: 36px;
-  width: auto;
+  height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 .back-btn {

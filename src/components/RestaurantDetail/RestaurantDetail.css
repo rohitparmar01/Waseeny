@@ -24,9 +24,9 @@
 }
 
 .logo-image {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
+  height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 .header-location-detail {
@@ -60,7 +60,7 @@
   align-items: center;
   gap: 6px;
   font-size: 14px;
-  color: #333;
+  color: #000;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
@@ -291,6 +291,13 @@
   text-align: center;
 }
 
+.search-dishes:focus {
+  outline: none;
+  border-color: rgba(239,68,68,0.7);
+  box-shadow: 0 4px 12px rgba(239,68,68,0.18);
+  background: #fff;
+}
+
 .search-dishes::placeholder {
   color: #6b7280;
   text-align: center;
@@ -467,7 +474,7 @@
 
 .view-cart-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.22);
 }
 
 @media (max-width: 992px) {

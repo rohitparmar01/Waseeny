@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import logo from '../../assets/waseeny-logo.png';
@@ -8,6 +8,9 @@ import footerPlaceholder from '../../assets/footer-placeholder.png';
 const Home = () => {
   const navigate = useNavigate();
   const categoryScrollRef = useRef(null);
+  const langContainerRef = useRef(null);
+  const [langOpen, setLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('En');
 
   const categories = [
     { name: 'Salad', image: 'salad' },
@@ -91,21 +94,27 @@ const Home = () => {
           <span className="location-label">Setup your precise location</span>
           <button className="location-dropdown">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3.5 5.5L7 9L10.5 5.5" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3.5 5.5L7 9L10.5 5.5" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>
 
         <div className="header-search">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="8" cy="8" r="6" stroke="#9ca3af" strokeWidth="1.5"/>
-            <path d="M12.5 12.5L16 16" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="8" cy="8" r="6" stroke="rgba(0,0,0,0.4)" strokeWidth="1.5"/>
+            <path d="M12.5 12.5L16 16" stroke="rgba(0,0,0,0.4)" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
           <input type="text" placeholder="Search for restaurant and food" />
         </div>
 
-        <div className="header-lang">
-          <span className="lang-button">En</span>
+        <div className="header-lang" ref={langContainerRef}>
+          <span className="lang-button" onClick={() => setLangOpen(v => !v)}>{selectedLang}</span>
+          {langOpen && (
+            <div className="lang-dropdown">
+              <button className="lang-option" onClick={() => { setSelectedLang('German'); setLangOpen(false); }}>German</button>
+              <button className="lang-option" onClick={() => { setSelectedLang('Arabic'); setLangOpen(false); }}>Arabic</button>
+            </div>
+          )}
           <button className="profile-button">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <circle cx="12" cy="8" r="4" stroke="#333" strokeWidth="1.5"/>
@@ -116,17 +125,24 @@ const Home = () => {
       </header>
 
       <div className="hero-section">
-        <div className="hero-content">
-          <div className="hero-icon-wrapper">
-            <div className="hero-icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M8 16C8 16 8 8 20 8C32 8 32 16 32 16L30 24H10L8 16Z" fill="white"/>
-                <rect x="10" y="24" width="20" height="8" rx="1" fill="white"/>
-              </svg>
+        <div className="hero-cards-container">
+          <div className="hero-card-main">
+            <div className="hero-content">
+              <div className="hero-icon-wrapper">
+                <div className="hero-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M8 12C8 12 8 4 20 4C32 4 32 12 32 12L30 20H10L8 12Z" fill="white"/>
+                    <rect x="10" y="20" width="20" height="8" rx="1" fill="white"/>
+                    <path d="M15 2C15 2 15 6 20 6C25 6 25 2 25 2" stroke="white" strokeWidth="2" fill="none"/>
+                    <circle cx="12" cy="10" r="1.5" fill="white"/>
+                    <circle cx="28" cy="10" r="1.5" fill="white"/>
+                  </svg>
+                </div>
+                <h1 className="hero-title">Food</h1>
+              </div>
+              <p className="hero-subtitle">Order food from your favourite restaurants</p>
             </div>
-            <h1 className="hero-title">Food</h1>
           </div>
-          <p className="hero-subtitle">Order food from your favourite restaurants</p>
         </div>
       </div>
 

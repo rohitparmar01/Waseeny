@@ -24,9 +24,9 @@
 }
 
 .logo-image-small {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
+  height: 80px !important;
+  width: auto !important;
+  object-fit: contain !important;
 }
 
 .tracking-title {

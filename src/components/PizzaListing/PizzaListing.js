@@ -53,7 +53,7 @@ const PizzaListing = () => {
           <div className="header-other">
             <span className="other-text">Other</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3.5 5.5L7 9L10.5 5.5" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3.5 5.5L7 9L10.5 5.5" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>
         </div>
