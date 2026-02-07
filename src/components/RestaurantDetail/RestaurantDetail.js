@@ -214,8 +214,9 @@ const RestaurantDetail = () => {
                             <path d="M8 14L7 13C3.5 9.8 1 7.5 1 4.8C1 2.6 2.6 1 4.8 1C6.1 1 7.4 1.6 8 2.6C8.6 1.6 9.9 1 11.2 1C13.4 1 15 2.6 15 4.8C15 7.5 12.5 9.8 9 13L8 14Z" stroke="#666" strokeWidth="1.5" fill="none"/>
                           </svg>
                         </div>
+                        {/* ADD button positioned relative to image */}
+                        <button className="add-btn" onClick={handleAddToCart}>ADD</button>
                       </div>
-                      <button className="add-btn" onClick={handleAddToCart}>ADD</button>
                     </div>
                   </div>
                 ))}

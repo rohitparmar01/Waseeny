@@ -322,7 +322,7 @@
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible; /* allow overlapping ADD pill to be visible */
 }
 
 .menu-item-card {
@@ -384,7 +384,7 @@
   border-radius: 8px;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom; /* keep image bottoms aligned by cropping from top */
 }
 
 /* Real food images for menu items */
@@ -416,20 +416,27 @@
 
 .add-btn {
   background: #fff;
-  border: 1px solid #48C479;
+  border: 2px solid #48C479;
   color: #48C479;
-  padding: 8px 28px;
-  border-radius: 6px;
+  padding: 8px 22px;
+  border-radius: 28px;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
   min-width: 90px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center; /* vertically center in row layout */
 }
 
 .add-btn:hover {
+  transform: translateY(-2px);
   background: #48C479;
   color: #fff;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
 
 .cart-footer {
@@ -587,6 +594,8 @@
     gap: 12px;
     order: -1; /* ensure image container appears first */
     align-items: center;
+    position: relative;
+    padding-bottom: 28px; /* space for overlapping add button on some layouts */
   }
 
   .menu-item-info {
@@ -606,8 +615,94 @@
     width: 100%;
     max-width: 100%;
   }
+
+  /* Position ADD button inside the image container so it stays
+     bottom-center across all screen sizes */
+  .menu-item-image-container {
+    position: relative; /* ensure absolute children are positioned to this box */
+    padding-bottom: 44px; /* space to show overlapping ADD pill */
+  }
+
+  .menu-item-image-container .add-btn {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    min-width: 100px;
+    padding: 8px 20px;
+    border-radius: 26px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    background: #fff;
+    border: 2px solid #48C479;
+    color: #48C479;
+    font-weight: 700;
+  }
+
+  /* Desktop: place ADD centered below the image container (but visually under the image)
+     and ensure enough spacing on the card so it doesn't clip */
+  @media (min-width: 769px) {
+    .menu-item-card {
+      padding-right: 24px;
+      position: relative;
+      min-height: 160px; /* ensure cards share a consistent baseline */
+      align-items: flex-start; /* let image container control vertical placement */
+    }
+
+    /* Make image container a fixed-height box and pin the image to its bottom
+       so all image footers line up regardless of card content height */
+    .menu-item-image-container {
+        position: relative; /* positioning context for the button */
+        height: 140px;
+        display: flex;
+        align-items: flex-end; /* push the image to the bottom of the container */
+        padding-bottom: 0;
+        gap: 12px;
+    }
+
+    /* Use a consistent image height on desktop so image bottoms align across cards */
+    .menu-item-image {
+      width: 140px;
+      height: 140px;
+      border-radius: 10px;
+      background-position: center bottom;
+      flex-shrink: 0;
+    }
+
+    /* Keep the ADD button vertically centered with the image by aligning
+       its container center along the card's cross axis */
+    .add-btn {
+      align-self: center;
+    }
+
+    .menu-item-image-container .add-btn {
+      position: absolute !important;
+      bottom: -18px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      z-index: 12 !important;
+      min-width: 110px !important;
+      padding: 10px 22px !important;
+      border-radius: 26px !important;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12) !important;
+      background: #fff !important;
+      border: 2px solid #48C479 !important;
+      color: #48C479 !important;
+      font-weight: 700 !important;
+    }
+  }
   
   .cart-footer {
     gap: 12px;
   }
+}
+
+/* Desktop overrides placed at file end to ensure correct specificity
+   (positions ADD button relative to image container) */
+@media (min-width: 769px) {
+  .menu-items-list { overflow: visible !important; }
+  .menu-item-card { position: relative !important; min-height: 160px !important; }
+  .menu-item-image-container { position: relative !important; height: 140px !important; display: flex !important; align-items: flex-end !important; }
+  .menu-item-image { width: 140px !important; height: 140px !important; background-position: center bottom !important; }
+  .menu-item-image-container .add-btn { position: absolute !important; bottom: -18px !important; left: 50% !important; transform: translateX(-50%) !important; z-index: 12 !important; }
 }

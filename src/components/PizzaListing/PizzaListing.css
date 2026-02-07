@@ -188,7 +188,7 @@
   position: relative;
   overflow: hidden;
   background-size: cover;
-  background-position: center;
+  background-position: center bottom; /* align image bottoms across cards */
 }
 
 /* Real pizza and restaurant images */
@@ -295,6 +295,15 @@
   
   .pizza-restaurants-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: use a fixed image height so the bottoms line up across grid items */
+@media (min-width: 769px) {
+  .pizza-restaurant-image {
+    height: 220px;
+    aspect-ratio: auto;
+    background-position: center bottom;
   }
 }
 
